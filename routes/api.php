@@ -12,7 +12,7 @@ use App\Http\Controllers\AuthController;
 Route::middleware('auth:sanctum')->group(function () {
     
     // Notes
-    Route::resource('notes', NoteController::class)->only(['index','store','update','delete']);
+    Route::resource('notes', NoteController::class)->only(['index','store','update','destroy']);
     //archive
     Route::patch('/notes/{id}/toggleArchive', [NoteController::class, 'toggleArchive']);
 
