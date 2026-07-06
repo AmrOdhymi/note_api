@@ -51,7 +51,7 @@ class AuthController extends Controller
         }
         $token = $user->createToken($request->device_name)->plainTextToken;
 
-        return response()->json(['token' => $token]);
+        return response()->json(['token' => $token,'username'=>$user->username,'profile_image'=>$user->profile_image]);
     }
 
     public function logout(Request $request){
